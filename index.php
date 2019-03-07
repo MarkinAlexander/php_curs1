@@ -3,6 +3,7 @@
 	$timePost = 3;
 	$chanelName = 'general';
 	$nowYear = date('Y');
+	$menuArr = ["home","archive","contact"];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,9 +18,12 @@
 		<h1><?php echo $title;?></h1>
 		
 		<ul id="menu">
-			<li><a href="#">home</a></li>
-			<li><a href="#">archive</a></li>
-			<li><a href="#">contact</a></li>
+			<?
+				foreach ($menuArr as $menu){
+					echo "</li><a href=\"#\">$menu</a></li>";
+				}
+			?>
+			
 		</ul>
 	
 		<div class="post">
