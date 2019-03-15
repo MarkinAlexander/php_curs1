@@ -1,32 +1,35 @@
-<? 
-	$dir = 'files';
-	$path = $dir . DIRECTORY_SEPARATOR . 'img';
-	$img_arr = [];
-	
-	foreach(scandir($path) as $key => $img) {
-		if (!in_array($img, [".", ".."])) {
-			$img_arr[] = $img;
-		}
-	}
+<?php
+include_once 'models/config.php';
+include_once 'models/photo.php';
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Галлерея</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <title>Работа с файлами</title>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <div class="gallery">
-<?
-    foreach($img_arr as $key => $img) {
-?>
-        <a href="<? echo $path . DIRECTORY_SEPARATOR . $img;?>" class="img_link" target="_blank">
-            <img src="<? echo $path . DIRECTORY_SEPARATOR . $img;?>" class="image" alt=""/>
-		</a>
-<?
-    }
-?>
-    </div>
+<div class="wrapper">
+<header>
+    <h1>ГАЛЕРЕЯ ФОТО</h1>
+</header>
+
+
+
+
+	<?= $form;?>
+
+
+	<div class="add_foto">
+		<form action="" method="POST" enctype="multipart/form-data">
+			<span> <b>Добавить файл: </b> </span>
+			<input type="file" name="userfile">
+			<button type="submit" name="send">ЗАГРУЗИТЬ</button> <br>
+			<span><?=$message?></span>
+		</form>
+	</div>
+</div>
 </body>
 </html>
