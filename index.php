@@ -13,22 +13,6 @@
         <h2>Каталог товаров</h2>
         <div class="items">
             <?=$result;?>
-            <div class="item">
-                <h4>Название товара</h4>
-                <div class ="img_text">
-                    <a href="#"><img src=""></a>
-                    <p class="shortP">Какой-то краткий текс с описание товара и которые можно приобрести</p>
-                </div>
-                <p class="price">999р</p>
-                <div class="buttons">
-                    <a class="btn_a" href="#">Подробнее</a>
-                    <a class="btn_a" href="#">Купить</a>
-                </div>
-            </div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
         </div>
     </div>
 </body>
