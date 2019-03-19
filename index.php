@@ -1,35 +1,35 @@
-<?php
-include_once 'models/config.php';
-include_once 'models/photo.php';
-?>
+<? include_once "ext".DIRECTORY_SEPARATOR."catalogfunction.php";?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Работа с файлами</title>
-    <link rel="stylesheet" href="css/style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style2.css">
+    <title>Каталог товаров</title>
 </head>
 <body>
-<div class="wrapper">
-<header>
-    <h1>ГАЛЕРЕЯ ФОТО</h1>
-</header>
-
-
-
-
-	<?= $form;?>
-
-
-	<div class="add_foto">
-		<form action="" method="POST" enctype="multipart/form-data">
-			<span> <b>Добавить файл: </b> </span>
-			<input type="file" name="userfile">
-			<button type="submit" name="send">ЗАГРУЗИТЬ</button> <br>
-			<span><?=$message?></span>
-		</form>
-	</div>
-</div>
+    <div class="wrapper">        
+        <h2>Каталог товаров</h2>
+        <div class="items">
+            <?=$result;?>
+            <div class="item">
+                <h4>Название товара</h4>
+                <div class ="img_text">
+                    <a href="#"><img src=""></a>
+                    <p class="shortP">Какой-то краткий текс с описание товара и которые можно приобрести</p>
+                </div>
+                <p class="price">999р</p>
+                <div class="buttons">
+                    <a class="btn_a" href="#">Подробнее</a>
+                    <a class="btn_a" href="#">Купить</a>
+                </div>
+            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
 </body>
 </html>
