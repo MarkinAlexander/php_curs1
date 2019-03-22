@@ -17,3 +17,4 @@ if(isset($_SESSION['role'])){
         echo '<a href="new_item.php">Добавить товар</a>';
     }
 }
+echo '<br><a href="cart.php">Корзина</a>';

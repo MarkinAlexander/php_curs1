@@ -34,7 +34,7 @@ else {
         $cart_id = mysqli_insert_id($connect);
         $_SESSION['cart_id'] = $cart_id;
         //$message .= "Создана корзина с id = $cart_id";
-        $_COOKIE['cart_id'] = $cart_id;
+        setcookie('cart_id', "$cart_id");
     }
 }
 
@@ -50,7 +50,7 @@ function addCart(){
                 $sql = "SELECT carts WHERE cart_id = $cart_id";
                 $res = mysqli_query($connect,$sql);
                 $num_res = $res->num_rows;
-                $message .= "В корзине $num_res товар"; //тут бы по хорошему добавить правильные окончания, но я и так не успеваю.
+                $message .= "<a href=\"cart.php\">В корзине</a> $num_res товар"; //тут бы по хорошему добавить правильные окончания, но я и так не успеваю.
             }                
         }
     }
@@ -68,7 +68,7 @@ function delCart(){
                 $sql = "SELECT carts WHERE cart_id = $cart_id";
                 $res = mysqli_query($connect,$sql);
                 $num_res = $res->num_rows;
-                $message .= "В корзине $num_res товар"; //тут бы по хорошему добавить правильные окончания, но я и так не успеваю.
+                $message .= '<a href="cart.php">В корзине</a>'.$num_res." товар"; //тут бы по хорошему добавить правильные окончания, но я и так не успеваю.
             }                
         }
     }

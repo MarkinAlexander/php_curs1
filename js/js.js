@@ -1,5 +1,17 @@
 $( window ).on( "load", function() {
     console.log( "window loaded" );
+
+    $(".btn_del").on("click", function(){
+      $.ajax({
+        type: "POST",
+        url: "cart.php",
+        data: "action=del&id="+$(this).attr('id'),
+        success: function(msg){
+          console.log (msg);
+          window.location.reload();
+        }
+      });
+    });
     $(".btn_buy").on("click", function(){
         if($(this).hasClass("incart")){
             $.ajax({
@@ -7,7 +19,7 @@ $( window ).on( "load", function() {
                 url: "ajax/delcart.php",
                 data: "action=del&id="+$(this).attr('id'),
                 success: function(msg){
-                  $(".cartinfo").html = msg;
+                  $("#cartinfo").text(msg);
                   console.log (msg);
                 }
               });
@@ -20,7 +32,7 @@ $( window ).on( "load", function() {
                 url: "ajax/addcart.php",
                 data: "action=add&id="+$(this).attr('id'),
                 success: function(msg){
-                  $(".cartinfo").html = msg;
+                  $("#cartinfo").text(msg);
                   console.log (msg);
                 }
               });
