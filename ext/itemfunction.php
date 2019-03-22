@@ -1,4 +1,7 @@
 <? include_once "mysqlconfig.php";
+if(session_id() == '') {
+    session_start();
+}
     $sql = "select * from catalog WHERE id =" .(int)$_GET['id'];
     $res = mysqli_query($connect,$sql);
     $data = mysqli_fetch_assoc($res);

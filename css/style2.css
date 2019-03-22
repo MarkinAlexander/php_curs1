@@ -49,3 +49,7 @@ body {
     color: rgb(98, 100, 88);
     border-radius: 10px;
 }
+.incart {
+    background-color: green;
+    color: whitesmoke; 
+}

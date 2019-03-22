@@ -1,5 +1,6 @@
 <?
 include_once "mysqlconfig.php";
+session_start(); 
 $message = '';
 function translit($string) {
     $translit = array(

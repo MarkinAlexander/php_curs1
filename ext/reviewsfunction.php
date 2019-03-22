@@ -1,6 +1,8 @@
 <? 
 include_once "mysqlconfig.php";
-
+if(session_id() == '') {
+    session_start();
+}
 if (!empty($_POST['text'])){
     
     if(!empty($_POST['username'])){
