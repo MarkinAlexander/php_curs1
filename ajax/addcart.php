@@ -6,9 +6,10 @@ if (isset($_POST['id'])) {
             $goods_id = (int)$_POST['id'];
             $sql = "INSERT INTO carts SET cart_id = $cart_id, goods_id = $goods_id";
             mysqli_query($connect,$sql);
-            $sql = "SELECT carts WHERE cart_id = $cart_id";
+            $sql = "SELECT COUNT(*) as count FROM carts WHERE cart_id = $cart_id";
             $res = mysqli_query($connect,$sql);
-            $num_res = $res->num_rows;
+            $data = mysqli_fetch_assoc($res);
+            $num_res = $data['count'];
             $message .= "В корзине $num_res товар"; //тут бы по хорошему добавить правильные окончания, но я и так не успеваю.
         }                
     }

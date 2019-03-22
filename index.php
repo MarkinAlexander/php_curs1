@@ -13,7 +13,7 @@
 <body>
     <div class="wrapper">
         <?include_once "menu.php";?>
-        <div class="cartinfo"></div>        
+        <div id="cartinfo"></div>        
         <h2>Каталог товаров</h2>
         <div class="items">
             <?=$result;?>
