@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(7, 134, 151);
+}
+.wrapper {
+    background-color: rgb(173, 247, 237);
+    max-width: 920px;
+    margin: 0 auto;
+}
+form input[type='text'], textarea {
+    width: 99%;
+}
+.comment {
+    border: 1px solid gray;
+    margin-top: 4px;
+    padding: 0 5px;
+}
