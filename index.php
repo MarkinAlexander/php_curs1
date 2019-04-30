@@ -1,23 +1,16 @@
-<? include_once "ext".DIRECTORY_SEPARATOR."catalogfunction.php";?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style2.css">
-    <title>Каталог товаров</title>
-    <script src="js/jquery.js"></script>
-    <script src="js/js.js"></script>
-</head>
-<body>
-    <div class="wrapper">
-        <?include_once "menu.php";?>
-        <div id="cartinfo"></div>        
-        <h2>Каталог товаров</h2>
-        <div class="items">
-            <?=$result;?>
-        </div>
-    </div>
-</body>
-</html>
+<?
+define ("DOCROOT", $_SERVER["DOCUMENT_ROOT"]."/");
+define ("MODELS_PATH", DOCROOT."models/");
+
+include_once MODELS_PATH."config.php";
+include_once MODELS_PATH."mysql.php";
+
+include_once AUTH_FNC_PATH."auth_fns.php";
+include_once MODELS_PATH."template_fns.php";
+include_once MODELS_PATH."uri_fns.php";
+include_once MODELS_PATH."cart/cart_fns.php";
+include_once MODELS_PATH."admincontent_fns.php";
+include_once MODELS_PATH."draw_items_fns.php";
+
+$request_string = $_SERVER["REQUEST_URI"];
+openURL($request_string);
